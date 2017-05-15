@@ -1,5 +1,5 @@
 {
-    "name": "findforsikring/leadvalidator-client",
+    "name": "findforsikring/leadvalidator-clients",
     "description": "Wrapper for Leadvalidator API",
     "require": {},
     "autoload": {
