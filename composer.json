@@ -1,0 +1,10 @@
+{
+    "name": "findforsikring/leadvalidator-client",
+    "description": "Wrapper for Leadvalidator API",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "LeadValidator\\": "src/"
+        }
+    }
+}
