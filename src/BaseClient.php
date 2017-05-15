@@ -40,7 +40,8 @@ abstract class BaseClient
      */
     protected function callApi($endpoint, $method, $params = [])
     {
-        if (!preg_match('/^' . preg_replace('/\//', '\/\/', $this->baseUrl) . '/', $endpoint)) {
+        $escapedBaseUrl = preg_replace('/\//', '\/', $this->baseUrl);
+        if (!preg_match('/^' . $escapedBaseUrl. '/', $endpoint)) {
             $endpoint = $this->baseUrl . $endpoint;
         }
         if (!preg_match('/api_token=.*/', $endpoint)){
