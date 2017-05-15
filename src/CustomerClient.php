@@ -9,8 +9,15 @@
 namespace LeadValidator;
 
 
+/**
+ * Class CustomerClient
+ * @package LeadValidator
+ */
 class CustomerClient extends BaseClient
 {
+    /**
+     * @var string
+     */
     protected $baseUrl = 'https://leadvalidator.dk/api/out/v1';
 
     /**
@@ -22,6 +29,11 @@ class CustomerClient extends BaseClient
         parent::__construct($api_token);
     }
 
+    /**
+     * Get a single lead by id.
+     * @param $id
+     * @return array|null
+     */
     public function getLead($id)
     {
         return $this->callApi('/single/' . $id, 'GET');

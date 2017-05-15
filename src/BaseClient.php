@@ -8,9 +8,19 @@
 
 namespace LeadValidator;
 
+/**
+ * Class BaseClient
+ * @package LeadValidator
+ */
 abstract class BaseClient
 {
+    /**
+     * @var string
+     */
     protected $api_token;
+    /**
+     * @var string
+     */
     protected $baseUrl = '';
 
     /**
@@ -22,6 +32,12 @@ abstract class BaseClient
         $this->api_token = $api_token;
     }
 
+    /**
+     * @param $endpoint
+     * @param $method
+     * @param array $params
+     * @return array|null
+     */
     protected function callApi($endpoint, $method, $params = [])
     {
         if (!preg_match('/^' . preg_replace('/\//', '\/\/', $this->baseUrl) . '/', $endpoint)) {
