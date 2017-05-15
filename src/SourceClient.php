@@ -20,7 +20,7 @@ class SourceClient extends BaseClient
         return $this->callApi('', 'GET');
     }
 
-    public function getCampaignInfo($id)
+    public function getCampaign($id)
     {
         return $this->callApi('/' . $id, 'GET');
     }
