@@ -43,7 +43,7 @@ abstract class BaseClient
         if (!preg_match('/^' . preg_replace('/\//', '\/\/', $this->baseUrl) . '/', $endpoint)) {
             $endpoint = $this->baseUrl . $endpoint;
         }
-        if (!preg_match('/\?api_token=.*$/', $endpoint)){
+        if (!preg_match('/api_token=.*/', $endpoint)){
             $endpoint .= "?api_token=" . $this->api_token;
         }
         $options = [

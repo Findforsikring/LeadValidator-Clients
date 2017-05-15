@@ -38,4 +38,12 @@ class CustomerClient extends BaseClient
     {
         return $this->callApi('/single/' . $id, 'GET');
     }
+
+    public function getNewLeads($campaign_id = null, $source_id = null, $paginate = 'no', $page = 1, $items_per_page = 15)
+    {
+        $params = compact('campaign_id', 'source_id', 'paginate', 'page', 'items_per_page');
+        $params['api_token'] = $this->api_token;
+        $url = $this->baseUrl . "?" . http_build_query($params);
+        return $this->callApi($url, 'GET');
+    }
 }
